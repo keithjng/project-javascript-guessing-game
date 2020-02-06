@@ -3,9 +3,9 @@ let guessingGameMakeGuess = require('./lib/guessingGameMakeGuess');
 let guessingGameIsDone = require('./lib/guessingGameIsDone');
 let readlineSync = require('readline-sync');
 
-let wordToGuess = 'pterodactyl';
+let wordToGuess = readlineSync.question('What word should be guessed?: ', { hideEchoBack: true});;
 
-let game = newGuessingGame('pterodactyl');
+let game = newGuessingGame(wordToGuess);
 
 //console.log(`"Guessing" the word '${wordToGuess}', one letter at a time.`);
 //console.log();
@@ -33,7 +33,7 @@ for (let i = 0; i < array.length + 2; i++) {
   console.log(`Current word is: ${game.currentWord}`);
   console.log();
   if (game.currentWord === wordToGuess) {
-    i = array.length
+    i = array.length +2
   }
 }
 
